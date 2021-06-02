@@ -1,14 +1,14 @@
-const iconContainer = document.querySelector('#icon');
-const inputField = document.querySelector('#city-input');
+const iconContainer = document.querySelector("#icon");
+const inputField = document.querySelector("#city-input");
 
-const API_KEY_WEATHER = '5ca6719ea060fa3f56d3789dfb9461b8';
-const API_KEY_GIF = 'CLCyDXF4J6YLPnlBS3LSi6MXVv9qAugg';
-let city = 'atlanta';
+const API_KEY_WEATHER = "5ca6719ea060fa3f56d3789dfb9461b8";
+const API_KEY_GIF = "CLCyDXF4J6YLPnlBS3LSi6MXVv9qAugg";
+let city = "atlanta";
 
 const getWeather = async () => {
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY_WEATHER}`,
-    { mode: 'cors' },
+    { mode: "cors" }
   );
   const weatherData = await response.json();
   console.log(weatherData);
@@ -35,7 +35,7 @@ const getGif = async (description) => {
   console.log(description);
   const response = await fetch(
     `https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY_GIF}&s=${description}&weirdness=10`,
-    { mode: 'cors' },
+    { mode: "cors" }
   );
   const result = await response.json();
   return result;
@@ -45,7 +45,7 @@ const displayGif = async (description) => {
   const gif = await getGif(description);
   // gifContainer.src = gif.data.images.original.url;
   const gifUrl = gif.data.images.original.url;
-  const body = document.querySelector('body');
+  const body = document.querySelector("body");
   body.style.cssText = `background-image:url(${gifUrl});background-size:cover;`;
 };
 
@@ -57,11 +57,11 @@ const displayIcon = async (iconId) => {
 const displayWeather = async () => {
   const weather = await processWeatherData();
   console.log(weather);
-  const cityTag = document.querySelector('#city');
-  const currentTemp = document.querySelector('#current-temp');
-  const minTemp = document.querySelector('#min-temp');
-  const maxTemp = document.querySelector('#max-temp');
-  const descriptionTag = document.querySelector('#description');
+  const cityTag = document.querySelector("#city");
+  const currentTemp = document.querySelector("#current-temp");
+  const minTemp = document.querySelector("#min-temp");
+  const maxTemp = document.querySelector("#max-temp");
+  const descriptionTag = document.querySelector("#description");
 
   cityTag.textContent = weather.cityName;
   currentTemp.textContent = `${weather.temp}°F`;

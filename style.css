@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+main {
+				display: grid;
+				justify-content: center;
+				align-content: center;
+				height: 100vh;
+}
+
+#city-input {
+				margin-top: -20px;
+}
+
+#weather-card {
+				display: grid;
+				grid-template-columns: auto;
+				grid-gap: 20px;
+				background: white;
+				text-align: center;
+				justify-content: center;
+				border: 3px solid black;
+				border-radius: 10px;
+				align-self: center;
+				padding: 20px;
+				margin-top: 20px;
+}
+
+#icon {
+				width: 100%;
+}
+
+#hi-lo-container {
+				display: grid;
+				grid-template-columns: auto auto;
+}

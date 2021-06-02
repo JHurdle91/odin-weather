@@ -9,8 +9,17 @@
 	<body>
 		<header></header>
 		<main>
-			<div id="response-container"></div>
-			<img src"#" />
+			<input id="city-input" type="text" onKeyPress="return updateCity()" placeholder="search city..."></form>
+			<div id="weather-card">
+				<h2 id="city">Loading...</h2>
+				<h3 id="current-temp">...</h3>
+				<div id="hi-lo-container">
+					<div id="min-temp">...</div>
+					<div id="max-temp">...</div>
+				</div>
+				<img id="icon" src="#" />
+				<h3 id="description">...</h3>
+			</div>
 		</main>
 		<footer></footer>
 		<script src="script.js"></script>
